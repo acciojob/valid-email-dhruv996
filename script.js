@@ -1,7 +1,13 @@
-function validEmail(str) {
-  //your JS code here.
+function validEmail(email) {
+  // Regular expression for validating an Email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
-// Do not change the code below.
-const str = prompt("Enter an email address.");
-alert(validEmail(str));
+function validateEmail() {
+  const inputEmail = document.getElementById('inputEmail').value;
+  const result = validEmail(inputEmail);
+
+  document.getElementById('result').innerText = `Is Valid Email: ${result}`;
+}
+
